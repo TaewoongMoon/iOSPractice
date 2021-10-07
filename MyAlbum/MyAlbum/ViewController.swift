@@ -11,10 +11,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     @IBAction func Hello(_ sender: Any) {
-        print("hello")
+        let alert = UIAlertController(title: "첫 경고메세지", message: "지금 배우는중", preferredStyle: .alert)
+        let action = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true,completion: nil)
     }
     
 
