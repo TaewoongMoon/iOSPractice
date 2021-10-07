@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  iOSTest
+//  MyAlbum
 //
-//  Created by 문태웅 on 2021/10/05.
+//  Created by 문태웅 on 2021/10/07.
 //
 
 import UIKit
