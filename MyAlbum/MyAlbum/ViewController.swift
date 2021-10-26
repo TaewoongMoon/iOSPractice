@@ -12,7 +12,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    @IBAction func Hello(_ sender: Any) {
+    @IBAction func showAlert(_ sender: Any) {
         let alert = UIAlertController(title: "첫 경고메세지", message: "지금 배우는중", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(action)
