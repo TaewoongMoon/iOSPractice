@@ -13,8 +13,8 @@ struct ContentView: View {
             ZStack{
                 Image("london").resizable().frame(width: 300, height: 300).cornerRadius(10)
                 VStack{
-                    Text("CN Tower").foregroundColor(.white)
-                    Text("Toronto").font(.footnote).foregroundColor(.white)
+                    Text("CN Tower").foregroundColor(.white).padding([.top, .leading, .trailing])
+                    Text("Toronto").font(.footnote).foregroundColor(.white).padding([.top, .leading, .trailing])
                 }.padding().background(Color.black).cornerRadius(10).opacity(0.8)
             }
             Spacer()
