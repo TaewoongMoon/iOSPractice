@@ -8,9 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var number : Int = 0
+    @State private var increase : Int = 2
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack{
+            Text(String(number))
+            HStack{
+                Button("Increase") {
+                    number += increase
+                }
+                Button("Decrease") {
+                    number *= increase
+                }
+            }
+        }
     }
 }
 
