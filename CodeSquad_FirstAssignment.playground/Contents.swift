@@ -53,11 +53,11 @@ func convertToCMForInch(fromMeters: Float) -> Float{
 }
 
 // Meter to Inch 시작함수
-func convertFromMeterToInch(fromMeter : Float) -> Float{
+func convertFromMeterToInch(fromMeter : Float) -> Float?{
     return convertToCMForInch(fromMeters: fromMeter)
 }
 
-func allCoversionTypes(data: String){
+func allCoversionTypes(data: String) -> Float?{
     var number : String = ""
     var text : String = ""
     
@@ -72,9 +72,9 @@ func allCoversionTypes(data: String){
         let cmIndex = number.index(before: cmMinusOne)
         let cm = Float(number[...cmIndex])!
         if(text == "inch"){
-            print(convertFromCMToInches(fromCM:cm))
+            return convertFromCMToInches(fromCM:cm)
         }else{
-            print(cm * 100)
+            return cm * 100
         }
     }
     if(number.contains("inch")){
@@ -82,9 +82,9 @@ func allCoversionTypes(data: String){
         let inchIndex = number.index(before: inchMinusOne)
         let inch = Float(number[...inchIndex])!
         if(text == "m"){
-            print(convertFromInchToMeters(fromInches: inch))
+            return convertFromInchToMeters(fromInches: inch)
         }else{
-            print(inch * 2.54)
+            return inch * 2.54
         }
     }
     if(number.contains("m")){
@@ -92,12 +92,14 @@ func allCoversionTypes(data: String){
         let meterIndex = number.index(before: meterMinusOne)
         let meter = Float(number[...meterIndex])!
         if(text == "inch"){
-            print(convertFromMeterToInch(fromMeter: meter))
+            return convertFromMeterToInch(fromMeter: meter)
         }else{
-            print(meter * 100)
+            return meter * 100
         }
     }
+    
+    return 0
 }
 
 let cm_inch = "18.24m"
-allCoversionTypes(data: cm_inch)
+print(allCoversionTypes(data: cm_inch)!)
